@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoiT | Padel Evening — Paris · Oct 13</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#FF3B6B;
+  --dark:#0D1021;
+  --aws:#FF9900;
+  --white:#fff;
+  --light:#f7f8fc;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text)}
+
+/* ── LOGOS ────────────────────────────────────────── */
+/* DoiT wordmark */
+.doit-mark{display:inline-flex;align-items:center;gap:2px;line-height:1}
+.doit-mark .d-circle{
+  width:1em;height:1em;border-radius:50%;
+  background:var(--pink);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:900;font-style:normal;font-size:.85em;
+  letter-spacing:0;
+}
+.doit-mark .d-rest{font-weight:800;letter-spacing:-.5px}
+.doit-mark .d-dot{color:var(--pink);font-weight:900;margin-left:1px}
+
+/* AWS badge */
+.aws-badge{
+  display:inline-flex;flex-direction:column;align-items:flex-start;
+  background:#232F3E;border-radius:7px;
+  padding:5px 12px 6px;
+}
+.aws-badge .aws-text{font-size:1em;font-weight:900;letter-spacing:2px;color:#fff;line-height:1.1}
+.aws-badge .aws-arrow{width:100%;margin-top:3px;display:flex;align-items:center;gap:0}
+.aws-badge svg{width:100%;height:6px;overflow:visible}
+
+/* ── NAV ────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:64px;
+  background:rgba(13,16,33,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.nav-left{display:flex;align-items:center;gap:14px}
+.nav-doit{font-size:20px;color:#fff}
+.nav-for{font-size:11px;font-weight:500;letter-spacing:.5px;color:rgba(255,255,255,.4);padding:4px 0}
+.nav-aws{font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.65)}
+.nav-sep{width:1px;height:22px;background:rgba(255,255,255,.15)}
+.nav-cta{
+  background:var(--pink);color:#fff;
+  font-size:12px;font-weight:600;letter-spacing:.4px;
+  padding:9px 22px;border-radius:6px;
+  text-decoration:none;transition:background .2s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:#e0295a}
+@media(max-width:640px){nav{padding:0 20px}.nav-for,.nav-aws,.nav-sep{display:none}}
+
+/* ── HERO ─────────────────────────────────────────── */
+#hero{
+  min-height:100vh;
+  background:linear-gradient(145deg,#0D1021 0%,#1a0830 45%,#290d1a 100%);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  padding:100px 24px 64px;
+}
+.blob-1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,107,.17) 0%,transparent 70%);pointer-events:none}
+.blob-2{position:absolute;bottom:-80px;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(255,153,0,.09) 0%,transparent 70%);pointer-events:none}
+.hero-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 70px,rgba(255,59,107,.022) 70px,rgba(255,59,107,.022) 71px);pointer-events:none}
+
+.hero-inner{position:relative;z-index:1;text-align:center;max-width:780px}
+
+.hero-host-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);
+  padding:8px 20px;border-radius:100px;margin-bottom:32px;
+}
+.hero-host-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.hero-host-doit{font-size:15px;color:#fff}
+
+.hero-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(40px,7.5vw,76px);
+  color:#fff;line-height:1.07;margin-bottom:20px;
+}
+.hero-title em{color:var(--pink);font-style:italic}
+
+.hero-for{
+  display:inline-flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);
+  padding:10px 20px;border-radius:10px;margin-bottom:28px;
+}
+.hero-for-label{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.hero-for-aws{font-size:16px;font-weight:800;letter-spacing:1px;color:#fff}
+.hero-for-aws span{color:var(--aws)}
+
+.hero-sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;max-width:540px;margin:0 auto 36px}
+
+.hero-meta{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.hm{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+
+.hero-btn{
+  display:inline-block;background:var(--pink);color:#fff;
+  font-size:14px;font-weight:600;letter-spacing:.3px;
+  padding:15px 44px;border-radius:8px;text-decoration:none;
+  transition:all .25s;box-shadow:0 8px 28px rgba(255,59,107,.38);
+}
+.hero-btn:hover{background:#e0295a;transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,59,107,.44)}
+
+/* ── COUNTDOWN ──────────────────────────────────────── */
+.cd-wrap{background:var(--light);border-bottom:1px solid var(--border);padding:36px 20px;text-align:center}
+.cd-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.cd-grid{display:flex;align-items:flex-start;justify-content:center;gap:clamp(14px,3vw,36px)}
+.cd-item{text-align:center}
+.cd-num{font-size:clamp(38px,8vw,64px);font-weight:800;color:var(--pink);line-height:1}
+.cd-unit{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.cd-dot{font-size:40px;color:var(--border);line-height:1;padding-top:6px}
+
+/* ── SECTIONS ───────────────────────────────────────── */
+.section{padding:72px 24px}
+.section-inner{max-width:880px;margin:0 auto}
+.alt{background:var(--light)}
+.s-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+.s-title{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,48px);color:var(--text);margin-bottom:12px;line-height:1.15}
+.s-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:580px}
+
+/* ── SCHEDULE CARDS ─────────────────────────────────── */
+.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+@media(max-width:640px){.sched-grid{grid-template-columns:1fr}}
+.sched-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 26px;position:relative;overflow:hidden;transition:box-shadow .2s}
+.sched-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.07)}
+.sched-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--pink)}
+.sched-card.card-2::before{background:var(--aws)}
+.sched-time{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.sched-card.card-2 .sched-time{color:#c47a00}
+.sched-card h3{font-size:22px;font-weight:700;margin-bottom:10px}
+.sched-card p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.sched-pill{display:inline-flex;align-items:center;gap:6px;background:var(--light);border-radius:100px;font-size:12px;font-weight:500;color:var(--muted);padding:5px 14px}
+
+/* Map button */
+.map-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;
+  background:var(--light);border:1px solid var(--border);border-radius:8px;
+  padding:10px 16px;
+  font-size:13px;font-weight:600;color:var(--text);
+  text-decoration:none;transition:all .2s;
+  width:100%;justify-content:center;
+}
+.map-btn:hover{border-color:var(--pink);color:var(--pink);background:#fff5f8}
+.sched-card.card-2 .map-btn:hover{border-color:var(--aws);color:#c47a00;background:#fff8ee}
+.map-btn .map-icon{font-size:15px}
+.map-btn .map-arrow{margin-left:auto;opacity:.4;font-size:12px}
+
+/* ── FORM ───────────────────────────────────────────── */
+.form-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px;margin-top:40px}
+@media(max-width:600px){.form-box{padding:20px}}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+.f-group{display:flex;flex-direction:column;gap:8px}
+.f-group.full{grid-column:1/-1}
+.f-label{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.f-opt{font-weight:400;letter-spacing:0;text-transform:none;color:#9ca3af;font-size:10px}
+.f-group input,.f-group select,.f-group textarea{
+  border:1.5px solid var(--border);border-radius:8px;
+  padding:12px 14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);
+  background:#fff;outline:none;transition:border-color .2s;
+}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--pink)}
+.f-group select{
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
+}
+.f-conditional{display:none;grid-column:1/-1}
+.f-conditional.show{display:block}
+.f-inner{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:560px){.f-inner{grid-template-columns:1fr}}
+.radio-group{display:flex;flex-direction:column;gap:10px;margin-top:2px}
+.radio-opt{
+  display:flex;align-items:center;gap:12px;
+  border:1.5px solid var(--border);border-radius:8px;
+  padding:11px 16px;cursor:pointer;transition:all .2s;
+  font-size:14px;color:var(--text);
+}
+.radio-opt:hover,.radio-opt.checked{border-color:var(--pink);background:#fff5f8}
+.radio-opt input{accent-color:var(--pink);width:16px;height:16px;flex-shrink:0}
+.submit-btn{
+  grid-column:1/-1;
+  background:var(--pink);color:#fff;border:none;
+  padding:15px 32px;border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+  cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(255,59,107,.28);margin-top:8px;
+}
+.submit-btn:hover{background:#e0295a;transform:translateY(-1px)}
+.submit-btn:disabled{background:#d1d5db;cursor:default;box-shadow:none;transform:none}
+.form-success{display:none;text-align:center;padding:48px 20px;animation:fadeUp .5s ease}
+.fs-icon{font-size:48px;margin-bottom:16px}
+.fs-title{font-family:'DM Serif Display',serif;font-size:36px;color:var(--text);margin-bottom:10px}
+.fs-sub{font-size:15px;color:var(--muted);line-height:1.75}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer{background:var(--dark);padding:44px 24px;text-align:center}
+.footer-inner{max-width:540px;margin:0 auto}
+.footer-logo{font-size:22px;color:#fff;margin-bottom:16px}
+.footer-note{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8}
+.footer-note strong{color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <img src="doit-logo.jpeg" height="34" alt="DoiT">
+  <circle cx="22" cy="22" r="22" fill="#FF3B6B"/>
+  <circle cx="19" cy="23" r="10" fill="white"/>
+  <circle cx="19" cy="23" r="5.5" fill="#FF3B6B"/>
+  <rect x="25" y="8" width="5.5" height="28" rx="2.75" fill="white"/>
+  <circle cx="52" cy="36" r="6" fill="#FF3B6B"/>
+  <text x="63" y="32" font-family="'Arial Rounded MT Bold',Arial" font-size="27" font-weight="900" fill="white">oit</text>
+</svg>
+    <div class="nav-sep"></div>
+    <span class="nav-for">for</span>
+    <span class="nav-aws">AWS Startups</span>
+  </div>
+  <a href="#register" class="nav-cta">Register now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob-1"></div><div class="blob-2"></div><div class="hero-lines"></div>
+  <div class="hero-inner">
+
+    <!-- Hosted by DoiT badge -->
+    <div class="hero-host-badge">
+      <span class="hero-host-label">Hosted by</span>
+      <img src="doit-logo.jpeg" height="26" alt="DoiT">
+  <circle cx="22" cy="22" r="22" fill="#FF3B6B"/>
+  <circle cx="19" cy="23" r="10" fill="white"/>
+  <circle cx="19" cy="23" r="5.5" fill="#FF3B6B"/>
+  <rect x="25" y="8" width="5.5" height="28" rx="2.75" fill="white"/>
+  <circle cx="52" cy="36" r="6" fill="#FF3B6B"/>
+  <text x="63" y="32" font-family="'Arial Rounded MT Bold',Arial" font-size="27" font-weight="900" fill="white">oit</text>
+</svg>
+    </div>
+
+    <h1 class="hero-title">Padel Evening<br><em>&amp; Drinks in Paris</em></h1>
+
+    <!-- For AWS Startups France -->
+    <div style="display:flex;justify-content:center;margin-bottom:28px">
+      <div class="hero-for">
+        <span class="hero-for-label">Exclusively for</span>
+        <!-- AWS badge inline -->
+        <img src="aws-logo.jpeg" height="40" alt="AWS">
+  <rect width="92" height="40" rx="6" fill="#232F3E"/>
+  <text x="8" y="27" font-family="'Helvetica Neue',Arial" font-size="21" font-weight="900" fill="white" letter-spacing="2">aws</text>
+  <path d="M8,34 Q24,40 46,39 Q66,38 80,32" stroke="#FF9900" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="77,29 85,32.5 77,37" fill="#FF9900"/>
+</svg>
+        <span class="hero-for-aws">Startups</span>
+      </div>
+    </div>
+
+    <p class="hero-sub">
+      DoiT is hosting an exclusive evening for AWS Startups teams — padel, drinks, and great conversations. 
+      Spots are limited, register to secure yours.
+    </p>
+    <div class="hero-meta">
+      <div class="hm">🎾 Padelistes Bercy · 18:00</div>
+      <div class="hm">🍺 The Frog at Bercy Village · 21:00</div>
+      <div class="hm">📍 Paris, 12e</div>
+    </div>
+    <a href="#register" class="hero-btn">Secure your spot →</a>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="cd-wrap">
+  <p class="cd-label">Event starts in</p>
+  <div class="cd-grid">
+    <div class="cd-item"><div class="cd-num" id="cdDays">--</div><div class="cd-unit">Days</div></div>
+    <div class="cd-dot">·</div>
+    <div class="cd-item"><div class="cd-num" id="cdHours">--</div><div class="cd-unit">Hours</div></div>
+    <div class="cd-dot">·</div>
+    <div class="cd-item"><div class="cd-num" id="cdMins">--</div><div class="cd-unit">Minutes</div></div>
+    <div class="cd-dot">·</div>
+    <div class="cd-item"><div class="cd-num" id="cdSecs">--</div><div class="cd-unit">Seconds</div></div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="section-inner">
+    <p class="s-tag">Programme</p>
+    <h2 class="s-title">An evening in two parts</h2>
+    <p class="s-sub">From padel courts to cocktail glasses — here's what to expect on October 13th.</p>
+    <div class="sched-grid">
+      <div class="sched-card">
+        <div class="sched-time">18:00 → ~21:00</div>
+        <h3>🎾 Padel Tournament</h3>
+        <p>A fun triangular padel tournament at one of Paris's best padel clubs. All levels welcome — from first-timers to regulars. Rackets available if needed.</p>
+        <div class="sched-pill">⏱ Approx. 3 hours</div>
+        <a class="map-btn" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47e673b60676b69d:0xeafa3ac05767e51b" target="_blank">
+          <span class="map-icon">📍</span>
+          Padelistes Bercy · 20 Rue Escoffier, 75012
+          <span class="map-arrow">↗</span>
+        </a>
+      </div>
+      <div class="sched-card card-2">
+        <div class="sched-time">21:00 → Late</div>
+        <h3>🍺 Drinks &amp; Dinner</h3>
+        <p>Continue the evening at The Frog at Bercy Village — right next door. Open to all, even if you skip the padel. A great setting for good conversations.</p>
+        <div class="sched-pill">⏱ From 21:00 onwards</div>
+        <a class="map-btn" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47e6723f9aa4ca5d:0xabbe675b91cf63ef" target="_blank">
+          <span class="map-icon">📍</span>
+          The Frog at Bercy Village · 25 Cr Saint-Emilion, 75012
+          <span class="map-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="section alt" id="register">
+  <div class="section-inner">
+    <p class="s-tag">Registration</p>
+    <h2 class="s-title">Reserve your spot</h2>
+    <p class="s-sub">This event is exclusively for AWS Startups and DoiT teams. Attendance is limited — registration is required.</p>
+    <div class="form-box">
+      <form id="regForm" onsubmit="submitForm(event)">
+        <div class="form-grid">
+          <div class="f-group">
+            <label class="f-label">First Name *</label>
+            <input type="text" name="firstName" required placeholder="Your first name">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Last Name *</label>
+            <input type="text" name="lastName" required placeholder="Your last name">
+          </div>
+          <div class="f-group full">
+            <label class="f-label">Will you join the Padel tournament? *</label>
+            <select name="padel" required onchange="togglePadel(this.value)">
+              <option value="">— Select an option —</option>
+              <option value="Yes, I'll play!">Yes, I'll play! 🎾</option>
+              <option value="No, drinks & dinner only">No, drinks &amp; dinner only 🍺</option>
+            </select>
+          </div>
+          <div class="f-conditional" id="padelFields">
+            <div class="f-inner">
+              <div class="f-group full">
+                <label class="f-label">What's your padel level?</label>
+                <div class="radio-group">
+                  <label class="radio-opt"><input type="radio" name="level" value="Never played"> 🆕 &nbsp;Never played</label>
+                  <label class="radio-opt"><input type="radio" name="level" value="Want to try!"> 🙌 &nbsp;I want to try!</label>
+                  <label class="radio-opt"><input type="radio" name="level" value="I play regularly"> 🎾 &nbsp;I play regularly</label>
+                  <label class="radio-opt"><input type="radio" name="level" value="I play a lot!"> 🔥 &nbsp;I play a lot!</label>
+                </div>
+              </div>
+              <div class="f-group full">
+                <label class="f-label">Padel racket</label>
+                <select name="racket">
+                  <option value="I have my own racket">I have my own racket 🏓</option>
+                  <option value="I'll need a racket">I'll need a racket to borrow</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="f-group full">
+            <label class="f-label">Will you join for drinks &amp; dinner? *</label>
+            <select name="drinks" required>
+              <option value="">— Select an option —</option>
+              <option value="Yes, I'll join!">Yes, I'll join! 🍺</option>
+              <option value="No, thanks">No, thanks</option>
+            </select>
+          </div>
+          <div class="f-group full">
+            <label class="f-label">Dietary restrictions <span class="f-opt">(optional)</span></label>
+            <input type="text" name="dietary" placeholder="e.g. vegetarian, gluten-free, nut allergy...">
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">Register now →</button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="fs-icon">🎾</div>
+        <h3 class="fs-title">You're registered!</h3>
+        <p class="fs-sub">We'll be in touch with any updates closer to the event.<br>See you on the courts — and at the bar — on October 13th!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div style="margin-bottom:20px">
+      <img src="doit-logo.jpeg" height="38" alt="DoiT" style="margin-bottom:16px">
+        <circle cx="22" cy="22" r="22" fill="#FF3B6B"/>
+        <circle cx="19" cy="23" r="10" fill="white"/>
+        <circle cx="19" cy="23" r="5.5" fill="#FF3B6B"/>
+        <rect x="25" y="8" width="5.5" height="28" rx="2.75" fill="white"/>
+        <circle cx="52" cy="36" r="6" fill="#FF3B6B"/>
+        <text x="63" y="32" font-family="'Arial Rounded MT Bold',Arial" font-size="27" font-weight="900" fill="white">oit</text>
+      </svg>
+    </div>
+    <p class="footer-note">
+      An event organized by <strong>DoiT</strong>, exclusively for <strong>AWS Startups France</strong> teams.<br>
+      Attendance is limited — registration is required to secure your spot.<br><br>
+      Tuesday, October 13 · Paris 12e · Starting at 18:00
+    </p>
+  </div>
+</footer>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxszrbLetl12n8e7QTnu-Gi-Rn8kvNe8h3jespswYfZqbQk6TCVMHrFyceUx-sIThF9/exec';
+
+function tick(){
+  const diff = new Date('2026-10-13T18:00:00') - new Date();
+  if(diff<=0){['cdDays','cdHours','cdMins','cdSecs'].forEach(id=>document.getElementById(id).textContent='00');return}
+  const pad=n=>String(n).padStart(2,'0');
+  document.getElementById('cdDays').textContent  = pad(Math.floor(diff/86400000));
+  document.getElementById('cdHours').textContent = pad(Math.floor(diff%86400000/3600000));
+  document.getElementById('cdMins').textContent  = pad(Math.floor(diff%3600000/60000));
+  document.getElementById('cdSecs').textContent  = pad(Math.floor(diff%60000/1000));
+}
+tick(); setInterval(tick,1000);
+
+function togglePadel(val){
+  document.getElementById('padelFields').classList.toggle('show',val==="Yes, I'll play!");
+}
+document.querySelectorAll('.radio-opt input').forEach(r=>{
+  r.addEventListener('change',()=>{
+    document.querySelectorAll('.radio-opt').forEach(o=>o.classList.remove('checked'));
+    if(r.checked) r.closest('.radio-opt').classList.add('checked');
+  });
+});
+async function submitForm(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;btn.textContent='Sending...';
+  const data=Object.fromEntries(new FormData(e.target).entries());
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})}catch(_){}
+  document.getElementById('regForm').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</body>
+</html>
