@@ -10,7 +10,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(13,16,33,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(30,36,72,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
 .nav-left{display:flex;align-items:center;gap:14px}
 .nav-sep{width:1px;height:22px;background:rgba(255,255,255,.15)}
 .nav-for{font-size:11px;font-weight:500;letter-spacing:.5px;color:rgba(255,255,255,.4)}
@@ -18,7 +18,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta{background:var(--pink);color:#fff;font-size:12px;font-weight:600;letter-spacing:.4px;padding:9px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap}
 .nav-cta:hover{background:#e0295a}
 @media(max-width:640px){nav{padding:0 20px}.nav-for,.nav-aws,.nav-sep{display:none}}
-#hero{min-height:100vh;background:linear-gradient(145deg,#0D1021 0%,#1a0830 45%,#290d1a 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:100px 24px 64px}
+#hero{min-height:100vh;background:linear-gradient(145deg,#1e2448 0%,#351a55 45%,#45182e 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:100px 24px 64px}
 .blob-1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,107,.17) 0%,transparent 70%);pointer-events:none}
 .blob-2{position:absolute;bottom:-80px;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(255,153,0,.09) 0%,transparent 70%);pointer-events:none}
 .hero-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 70px,rgba(255,59,107,.022) 70px,rgba(255,59,107,.022) 71px);pointer-events:none}
@@ -102,14 +102,10 @@ footer{background:var(--dark);padding:44px 24px;text-align:center}
 <!-- NAV -->
 <nav>
   <div class="nav-left">
-    <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:4px 10px;display:inline-flex;align-items:center;backdrop-filter:blur(8px)">
-      <img src="doit-logo.png" height="28" alt="DoiT">
-    </div>
+    <img src="doit-logo.png" height="28" alt="DoiT">
     <div class="nav-sep"></div>
     <span class="nav-for">for</span>
-    <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:4px 10px;display:inline-flex;align-items:center;backdrop-filter:blur(8px)">
-      <img src="aws-logo.png" height="22" alt="AWS">
-    </div>
+    <img src="aws-logo.png" height="22" alt="AWS">
   </div>
   <a href="#register" class="nav-cta">Register now</a>
 </nav>
@@ -122,17 +118,13 @@ footer{background:var(--dark);padding:44px 24px;text-align:center}
   <div class="hero-inner">
     <div class="hero-host-badge">
       <span class="hero-host-label">Hosted by</span>
-      <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:3px 10px;display:inline-flex;align-items:center;backdrop-filter:blur(8px)">
-        <img src="doit-logo.png" height="24" alt="DoiT">
-      </div>
+      <img src="doit-logo.png" height="24" alt="DoiT">
     </div>
     <h1 class="hero-title">Padel Evening<br><em>&amp; Drinks in Paris</em></h1>
     <div style="display:flex;justify-content:center;margin-bottom:28px">
       <div class="hero-for">
         <span class="hero-for-label">Exclusively for</span>
-        <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:4px 12px;display:inline-flex;align-items:center;backdrop-filter:blur(8px)">
-          <img src="aws-logo.png" height="32" alt="AWS">
-        </div>
+        <img src="aws-logo.png" height="32" alt="AWS">
       </div>
     </div>
     <p class="hero-sub">DoiT is hosting an exclusive evening for AWS Startups teams — padel, drinks, and great conversations. Spots are limited, register to secure yours.</p>
@@ -260,7 +252,7 @@ footer{background:var(--dark);padding:44px 24px;text-align:center}
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div style="margin-bottom:20px;display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:6px 16px;backdrop-filter:blur(8px)">
+    <div style="margin-bottom:20px">
       <img src="doit-logo.png" height="36" alt="DoiT">
     </div>
     <p class="footer-note">
